@@ -2,7 +2,7 @@
 
 # CSS fonts and a button
 
-This is my Fonts and Button Assignment about odd animals. It uses CSS to make the website look a little more appealing.
+**Description**: This is my Fonts and Button Website. It now has more advanced CSS to make the site more appealing.
 
 **Objectives**: Learn how to use CSS stylesheets. Understand what user-agent stylesheets are and the purpose of CSS resets. Add web fonts to your website. Create a button class to style links to appear as "web buttons." Adjust whitespace to keep your pages from looking crowded.
 
