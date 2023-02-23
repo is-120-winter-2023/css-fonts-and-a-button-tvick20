@@ -1,17 +1,20 @@
 <!-- cSpell:enable  -->
+
 # CSS fonts and a button
 
-**Objectives**: Learn how to use CSS stylesheets. Understand what  user-agent stylesheets are and the purpose of CSS resets. Add web fonts to your website. Create a button class to style links to appear as "web buttons." Adjust whitespace to keep your pages from looking crowded.
+This is my Fonts and Button Assignment about odd animals. It uses CSS to make the website look a little more appealing.
+
+**Objectives**: Learn how to use CSS stylesheets. Understand what user-agent stylesheets are and the purpose of CSS resets. Add web fonts to your website. Create a button class to style links to appear as "web buttons." Adjust whitespace to keep your pages from looking crowded.
 
 **Concepts covered**: CSS resets, box-model, CSS variables, pseudo-classes, simple transitions.
 
-| :warning: This assignment builds on your _Responsive images and SVG images_ assignment                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :warning: This assignment builds on your _Responsive images and SVG images_ assignment                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | After cloning this repo and opening it in VSCode, copy the following files and folders from your _Responsive images and SVG images_ assignment into this repo.<br><br><ul><li>📄 index.html</li><li>📄 favicon.ico</li><li>📁styles</li><li>📁images</li><li>📁about</li><li>📁contact</li></ul><br>**Make sure that you don't copy any other folders or files, including the `test` folder, the hidden `.git` and `.github` folders, and the `package.json` files**<br><br>You can remove the inline SVG from your main `index.html` if it doesn't fit with your design. <br><br>You can also remove `<figure>` and `<figcaption>` from your image if you'd prefer. |
 
 ## CSS reset stylesheets
 
-Browsers have  _user-agent stylesheets_ that provide default styling for HTML elements. Since each vendors' user-agent stylesheet styles the HTML differently, most developers use a CSS reset stylesheet to make sure their websites look consistent across all browsers. Most CSS frameworks also use a reset. Bootstrap, for example, uses [Reboot](https://getbootstrap.com/docs/4.0/content/reboot/) which is based on normalize.css. Some popular CSS resets include the following:
+Browsers have _user-agent stylesheets_ that provide default styling for HTML elements. Since each vendors' user-agent stylesheet styles the HTML differently, most developers use a CSS reset stylesheet to make sure their websites look consistent across all browsers. Most CSS frameworks also use a reset. Bootstrap, for example, uses [Reboot](https://getbootstrap.com/docs/4.0/content/reboot/) which is based on normalize.css. Some popular CSS resets include the following:
 
 - [normalize.css](https://necolas.github.io/normalize.css/) - a popular CSS reset that keeps some default styles. I recommend this for beginners.
 - [Josh Comeau's simple reset](https://www.joshwcomeau.com/css/custom-css-reset/) - a minimalistic modern alternative to normalize.css that keeps many default styles but is notably different from normalize as it removes all margins, adds line spacing, and doesn't set a default font.
@@ -24,7 +27,7 @@ This semester, I included Josh Comeau's simple reset in the `styles/main.css` fi
 
 ### Uncomment the resets
 
-Let's uncomment some resets for this assignment. Open `styles/main.css`. On line 16, remove the comment marks `/*  */` around  `margin: 0;` so it looks like this:
+Let's uncomment some resets for this assignment. Open `styles/main.css`. On line 16, remove the comment marks `/*  */` around `margin: 0;` so it looks like this:
 
 ```css
 * {
@@ -36,10 +39,8 @@ Let's uncomment some resets for this assignment. Open `styles/main.css`. On line
 
 Next, go to line 31 and uncomment this block (see the tip below for a shortcut to comment and uncomment blocks of code):
 
-```css
-
-```css
-img,
+````css
+```css img,
 picture,
 video,
 canvas,
@@ -48,11 +49,11 @@ svg {
   max-width: 100%;
   height: auto;
 }
-```
+````
 
-| 💡 Shortcut to quickly comment and uncomment blocks of code in VSCode |
-|:-----|
-|1. Select the lines you want to comment or uncomment<br>2. Press `Ctrl` + `/` (Windows) or `⌘` + `/` (Mac)<br><br>![comment demo gif](readme-assets/comment-shortcut.gif) |
+| 💡 Shortcut to quickly comment and uncomment blocks of code in VSCode                                                                                                     |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1. Select the lines you want to comment or uncomment<br>2. Press `Ctrl` + `/` (Windows) or `⌘` + `/` (Mac)<br><br>![comment demo gif](readme-assets/comment-shortcut.gif) |
 
 ### An aside on images and `display: block`
 
@@ -62,7 +63,7 @@ One of the more "annoying" CSS quirks for beginnners is that, by default, images
 
 _[Link to the CodePen](https://codepen.io/lsburton/pen/eYjXmqg?editors=1100) that generated this image._
 
- The `max-width: 100%` property keeps large images from overflowing thier containers, but you may need to override it on occasion; however, that's for a later lesson. I added the `height: auto` property to make sure images keep their aspect ratio and don't appear squashed.
+The `max-width: 100%` property keeps large images from overflowing thier containers, but you may need to override it on occasion; however, that's for a later lesson. I added the `height: auto` property to make sure images keep their aspect ratio and don't appear squashed.
 
 ## CSS variables and the `:root` selector
 
@@ -94,10 +95,10 @@ or
 ```css
 :root {
   --color-font: #333;
-  --color-primary: #205373;      /* dark blue */
-  --color-secondary: #517EA6;    /* light blue */
-  --color-accent: #A6653F;       /* orange brown */
-  --color-accent-light: #F2BC8D; /* light tan */
+  --color-primary: #205373; /* dark blue */
+  --color-secondary: #517ea6; /* light blue */
+  --color-accent: #a6653f; /* orange brown */
+  --color-accent-light: #f2bc8d; /* light tan */
 }
 ```
 
@@ -143,8 +144,8 @@ and
 
 will behave differently. The `border` will only be applied to the `:root` element in the first example, but will be applied to every element in the second example. Try it out in a CodePen!
 
-| :bulb: Cascade, specificity, and inheritance |
-:-----|
+| :bulb: Cascade, specificity, and inheritance                                                                                                                                                                                                                                                                                    |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | To learn more see MDN's [Cascade, specificity, and inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance) or, while it's an older article, it's still quite helpful, Sitepoint's [CSS Inheritance: An Introduction](https://www.sitepoint.com/css-inheritance-introduction/). |
 
 ## Adding fonts
@@ -170,8 +171,8 @@ We'll use [Google fonts](https://fonts.google.com/) in this course because they 
 - Use the `font-weight` property to set the weight of your headings and body text. If you choose a darker or lighter bold font weight such as Meidum 500 or Black 900 (default bold weight is 700), you can set the weight using the number, e.g. `font-weight: 500;`.
 - Use the `font-size` property to set the size of your headings and body text. A current design trend is large headings, so you might want to make your headings larger than the default. For accessibility reasons, it's best to set the font size using `rem` units, which are relative to the base font size. This will allow users with vision impairments to change the base font size in their browser settings and have your fonts re-size appropriatley.
 
-| 💡 Loading fonts in HTML vs CSS |
-|:------|
+| 💡 Loading fonts in HTML vs CSS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | You can load fonts in HTML using `<link>`, but you can also load them in a CSS file using `@import`. If you use a CDN like Google Fonts, loading fonts using `<link>` is faster than using `@import` as it allows the fonts to be requested and downloaded (or served out of the browser cache) quicker. If you use the `<link>` option with Google Fonts, it uses JavaScript to avoid the "flash of unstyled content" issue when a page is first displayed with the default browser font, and then repainted with the correct font. |
 
 ## Styling general links
@@ -181,13 +182,13 @@ The default styling for `<a>` elements includes an underline and usually a blue 
 Add CSS in your `styles/main.css` file (below the resets) to remove the underline by overriding the default styling of the `a` selector. Give links a color using one of your CSS color variables.
 
 Finally, add a `:hover` pseudo-class to style links when the user hovers over them. Observe how some of the websites you visit frequently style their links. You can use a different color for the hover state, or you can use the same color and add an underline.
-| ⚠️ "Dead" links and hover states                                                                                                                                                      |
+| ⚠️ "Dead" links and hover states |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| You don't want dead links (links without an `href` attribute) to look like active links by having a hover state. Write a `:hover` selector that targets only links with an `href` attribute. **HINT**: `a[href]:hover`.  |
+| You don't want dead links (links without an `href` attribute) to look like active links by having a hover state. Write a `:hover` selector that targets only links with an `href` attribute. **HINT**: `a[href]:hover`. |
 
-| 💡 Other useful link pseudo-classes |
-|:------|
-| You can also use the `:focus` pseudo-class to style links when they are focused (e.g. when a user tabs to them). You can also use the `:visited` pseudo-class to style links that have been visited. To learn more, see MDN's [Location pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#location_pseudo-classes). For a demo showing how to combine pseudo-classes see my [Action pseudo-classes CodePen](https://codepen.io/lsburton/pen/dgvNPW?editors=1100)|
+| 💡 Other useful link pseudo-classes                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| You can also use the `:focus` pseudo-class to style links when they are focused (e.g. when a user tabs to them). You can also use the `:visited` pseudo-class to style links that have been visited. To learn more, see MDN's [Location pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#location_pseudo-classes). For a demo showing how to combine pseudo-classes see my [Action pseudo-classes CodePen](https://codepen.io/lsburton/pen/dgvNPW?editors=1100) |
 
 <!-- visited?? -->
 
@@ -195,9 +196,9 @@ Finally, add a `:hover` pseudo-class to style links when the user hovers over th
 
 Many links on the web are styled as buttons. Buttons are a common way to signal users that an item is clickable.
 
-| ⚠️ `<button>` element vs. an `<a>` with a `button` class |
-|:------|
-| HTML has a `<button>` element. However, `<button>` elements are meant to be used for submitting forms, and they have default styling that you may not want. From a semantic standpoint, you want a hyperlink to be associated with an `<a>` element.  |
+| ⚠️ `<button>` element vs. an `<a>` with a `button` class                                                                                                                                                                                             |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| HTML has a `<button>` element. However, `<button>` elements are meant to be used for submitting forms, and they have default styling that you may not want. From a semantic standpoint, you want a hyperlink to be associated with an `<a>` element. |
 
 - Add a link (`<a>`) below the text inside each of your two `<article>` elements. Use a common link name such as "Learn More" or "Contact" or "Buy Now", etc. The link can simply link to the top of the page (`href="#"`) for now.
 - Add `class="button"` to the `<a>`
@@ -213,25 +214,25 @@ Many links on the web are styled as buttons. Buttons are a common way to signal 
   }
   ```
 
-   If you want transitions on more than one property, you can separate them with a comma, for example:
+  If you want transitions on more than one property, you can separate them with a comma, for example:
 
-   ```css
-   transition: background-color 300ms ease, color 300ms ease;
-   ```
+  ```css
+  transition: background-color 300ms ease, color 300ms ease;
+  ```
 
-   We will learn more about transitions later in the course.
+  We will learn more about transitions later in the course.
 
 - Change the cursor to a pointer when it's on top of/in the web button.
 
-| 💡 Use specificity not `!important` to override default styles |
-|:-----|
+| 💡 Use specificity not `!important` to override default styles                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | If you notice that some styles you set on your `<a>` elements aren't overriden with the `.button` or `.button:hover` selectors, add additional declarations using selectors with enough specificity to override the default `<a>` styles. Do not use `!important` to override the default styles. Using `!important` is generally bad practice and should be avoided.<br><br>In VS Code, if you hover over a selector, it will display the selector's specificity.<br><br>![vscode specificity](readme-assets/vscode-specificity.png) |
 
 ## Whitespace
 
 Many beginning web developers underestimate how much whitespace is needed on a web page. Whitespace is the space between elements on a page. Whitespace makes a page easier to read and gives the page a clean, professional look. When you browse the web, pay attention to the whitespace between elements. You'll notice that most websites have a lot of whitespace.
 
-| 🎥 Watch a video on whitespace                                                                                                                   |
+| 🎥 Watch a video on whitespace                                                                                                                               |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | For tips on whitespace, watch [Kevin Powell's Web design tips for developers](https://www.youtube.com/watch?v=ykn4XNDwW7Q). Although, I prefer `em` to `ch`. |
 
@@ -261,15 +262,15 @@ You can adjust the `max-width` and `padding` as needed to fit your design. You g
 
 The CSS reset I had you add to `styles/main.css` sets a default margin of `0` on all elements. I recommend this to avoid any unexpected spacing issues caused by CSS's default behavior of _collapsing margins_. I prefer to set only top or only bottom margins on elements to avoid any collapsing margins.
 
-| 📖 Read about collapsing margins                                                                                                                                                             |
+| 📖 Read about collapsing margins                                                                                                                                                                 |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Collapsing margins can be tricky and sometimes confusing. Review Smashing Magazine's section on [margin collapsing](https://www.smashingmagazine.com/2019/07/margins-in-css/#margin-collapsing). |
 
 Review your website and add margins to elements as needed. Remember that you probably need more whitespace than you think.
 
- Generally, I'd suggests adding a bottom margin to `<p>`, `<article>`, and `<aside>`, but top and bottom margins to heading elements. If headings have a top margin, you will likely have margin collapse if you add a bottom margin to `<article>`, so be aware of that.
+Generally, I'd suggests adding a bottom margin to `<p>`, `<article>`, and `<aside>`, but top and bottom margins to heading elements. If headings have a top margin, you will likely have margin collapse if you add a bottom margin to `<article>`, so be aware of that.
 
- On headings, if you use `em` for the margin, it will scale with the font size. If you use `rem`, it will not scale. Here is the CSS from my sample website. Notice the use of `em` for the margins.
+On headings, if you use `em` for the margin, it will scale with the font size. If you use `rem`, it will not scale. Here is the CSS from my sample website. Notice the use of `em` for the margins.
 
 ```css
 h1,
@@ -282,7 +283,6 @@ h4 {
   margin-bottom: 0.5em;
   margin-top: 1.5em;
 }
-
 
 h1 {
   font-size: 3.5rem;
@@ -306,8 +306,8 @@ aside {
 }
 ```
 
-| 💡 Organizing your CSS |
-|:-----|
+| 💡 Organizing your CSS                                                                                                                                                                                                                                                                                                                                                                                                     |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | There is no set way to organize your CSS. Because of specificity, I prefer to list element selectors with low specificity first (`body`, `p`, etc.) followed by general classes (such as `.button`) and then more specific classes organized by function (header styles, article styles, etc.). Read [MDN's Organizing your CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Organizing) for ideas. |
 
 ### Style your footer
